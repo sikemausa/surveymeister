@@ -20,10 +20,8 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: "https://immense-cliffs-94845.herokuapp.com/auth/google/callback",
+      callbackURL: `${keys.googleCallbackURI}/auth/google/callback`,
       // ^^ has to be set in oAuth
-      proxy: true
-      // ^^ allows for relative paths without http/https discrepancy issue
     },
     (accessToken, refreshToken, profile, done) => {
       User.findOne({ googleId: profile.id }).then(existingUser => {
