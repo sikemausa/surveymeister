@@ -20,7 +20,7 @@ passport.use(
     {
       clientID: keys.googleClientID,
       clientSecret: keys.googleClientSecret,
-      callbackURL: "/auth/google/callback",
+      callbackURL: "https://immense-cliffs-94845.herokuapp.com/auth/google/callback",
       // ^^ has to be set in oAuth
       proxy: true
       // ^^ allows for relative paths without http/https discrepancy issue
